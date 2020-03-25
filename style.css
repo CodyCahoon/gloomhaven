@@ -1,0 +1,45 @@
+@font-face {
+  font-family: Gloom;
+  src: url(./assets/fonts/PirataOne-Gloomhaven.ttf);
+}
+
+body,
+html {
+  background: #333;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 200px;
+}
+
+section {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+button {
+  margin: 4px;
+  outline: 4px solid #333;
+  border: 2px solid #333;
+  cursor: pointer;
+  background-color: #333;
+  font-family: Gloom;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: all 150ms;
+}
+
+button:hover {
+  border-color: white;
+}
