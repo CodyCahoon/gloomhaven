@@ -37,7 +37,7 @@
         ['double', 'Damage--Double'],
         ['bless', 'Damage--Bless'],
         ['miss', 'Damage--Miss'],
-        ['curse', 'Damge--Curse'],
+        ['curse', 'Damage--Curse'],
         ['+2fire', 'Damage--Plus--2--Fire'],
         ['+2ice', 'Damage--Plus--2--Ice'],
         ['earth', 'Element--Earth'],
@@ -147,9 +147,11 @@
     configureButton('curse', onAddCurse);
 
     function onDraw() {
-        if (cards.available.length === 0) {
+        const hasCardsToDraw = cards.available.length > 0;
+        if (!hasCardsToDraw) {
             return;
         }
+
         const randomIndex = Math.floor(Math.random() * cards.available.length);
         const card = cards.available[randomIndex];
         cards.drawn.unshift(card);
@@ -171,14 +173,15 @@
     }
 
     function renderCards() {
+        const hasCardsToDraw = cards.available.length > 0;
+        const filter = hasCardsToDraw ? '' : 'grayscale(1)';
+        document.getElementById('draw').style.filter = filter;
+
         const placeholder = document.getElementById('placeholder');
         placeholder.innerHTML = null;
         
-        if (cards.drawn.length === 0) {
-            placeholder.appendChild(createCard('blank'));
-        } else {
-            cards.drawn.map(createCard).forEach(img => placeholder.appendChild(img));
-        }
+        const cardsToRender = cards.drawn.length === 0 ? ['blank'] : cards.drawn;
+        cardsToRender.map(createCard).forEach(img => placeholder.appendChild(img));
 
         function createCard(name) {
             const img = document.createElement('img');
