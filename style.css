@@ -16,8 +16,22 @@ body {
   flex-direction: column;
 }
 
+main {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 img {
   max-width: 200px;
+  margin: 10px;
+}
+
+#placeholder {
+  width: 200px;
 }
 
 section {
