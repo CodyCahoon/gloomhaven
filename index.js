@@ -57,15 +57,17 @@
         setupSunkeeper();
         setupQuartermaster();
 
-        const deck = getDeck();
+        const character = window.location.href.split('?')[1] || 'spellweaver';
+
+        const deck = getDeck(character);
         cards.all = [...deck];
         cards.available = [...deck];
         cards.drawn = [];
+
+        renderName(character);
         renderCards();
 
         function getDeck() {
-            let character = window.location.href.split('?')[1];
-
             if (character === 'spellweaver') {
                 return cardsByCharacter[characters.Spellweaver];
             }
@@ -184,6 +186,10 @@
             img.src = `./assets/attacks/${resource}.png`;
             return img;
         }
+    }
+
+    function renderName(name) {
+        document.getElementById('name').innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
 
 })();
