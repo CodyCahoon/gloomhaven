@@ -128,7 +128,7 @@
         }
 
         function setupQuartermaster() {
-            const deck = cardsByCharacter[characters.Sunkeeper];
+            const deck = cardsByCharacter[characters.Quartermaster];
             addToDeck(deck, '+1', 7);
             addToDeck(deck, '+0', 2);
             addToDeck(deck, '-1');
