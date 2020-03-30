@@ -120,7 +120,7 @@
         function setupSunkeeper() {
             const deck = cardsByCharacter[characters.Sunkeeper];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 7);
+            addToDeck(deck, '+0', 4);
             addToDeck(deck, '-1');
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
