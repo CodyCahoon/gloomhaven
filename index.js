@@ -46,7 +46,8 @@
         ['light', 'Element--Light'],
         ['refresh', 'Refresh'],
         ['pierce3', 'Pierce--3'],
-        ['blank', 'Attack--Modifier--Blank']
+        ['blank', 'Attack--Modifier--Blank'],
+        ['poison', 'Poison']
     ]);
 
     init();
@@ -115,6 +116,7 @@
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, 'poison');
         }
 
         function setupSunkeeper() {
