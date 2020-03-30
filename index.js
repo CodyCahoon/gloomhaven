@@ -47,7 +47,8 @@
         ['refresh', 'Refresh'],
         ['pierce3', 'Pierce--3'],
         ['blank', 'Attack--Modifier--Blank'],
-        ['poison', 'Poison']
+        ['poison', 'Poison'],
+        ['+0stun', 'Damage--Plus--0--Stun']
     ]);
 
     init();
@@ -95,6 +96,7 @@
             const deck = cardsByCharacter[characters.Spellweaver];
             addToDeck(deck, '+1', 11);
             addToDeck(deck, '+0', 2);
+            addToDeck(deck, '+0stun');
             addToDeck(deck, '-1', 3);
             addToDeck(deck, '+2fire', 2);
             addToDeck(deck, '+2ice', 2);
