@@ -180,6 +180,7 @@
         const hasCardsToDraw = cards.available.length > 0;
         const filter = hasCardsToDraw ? '' : 'grayscale(1)';
         document.getElementById('draw').style.filter = filter;
+        document.getElementById('total-cards').innerHTML = cards.available.length;
 
         const placeholder = document.getElementById('placeholder');
         placeholder.innerHTML = null;
