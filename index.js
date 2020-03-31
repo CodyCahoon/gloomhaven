@@ -48,7 +48,8 @@
         ['pierce3', 'Pierce--3'],
         ['blank', 'Attack--Modifier--Blank'],
         ['poison', 'Poison'],
-        ['+0stun', 'Damage--Plus--0--Stun']
+        ['+0stun', 'Damage--Plus--0--Stun'],
+        ['-1scenario', 'Damage--Minus--1'],
     ]);
 
     init();
@@ -149,6 +150,7 @@
     configureButton('shuffle', onShuffle);
     configureButton('bless', onAddBless);
     configureButton('curse', onAddCurse);
+    configureButton('scenario-effect', onAddScenarioEffect);
 
     function onDraw() {
         const hasCardsToDraw = cards.available.length > 0;
@@ -163,8 +165,9 @@
     }
 
     function onShuffle() {
-        const blessAndCurse = cards.available.filter(c => c === 'bless' || c === 'curse');
-        cards.available = [...cards.all, ...blessAndCurse];
+        const cardsToKeep = new Set(['bless', 'curse', '-1scenario']);
+        const keepCards = cards.available.filter(c => cardsToKeep.has(c));
+        cards.available = [...cards.all, ...keepCards];
         cards.drawn = [];
     }
 
@@ -174,6 +177,10 @@
 
     function onAddCurse() {
         cards.available.push('curse');
+    }
+
+    function onAddScenarioEffect() {
+        cards.available.push('-1scenario');
     }
 
     function renderCards() {
