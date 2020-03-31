@@ -189,6 +189,14 @@
         document.getElementById('draw').style.filter = filter;
         document.getElementById('total-cards').innerHTML = cards.available.length;
 
+        if (needsShuffle()) {
+            document.getElementById('draw').classList.add('needs-shuffle');
+            document.getElementById('shuffle-deck').style.display = 'block';
+        } else {
+            document.getElementById('draw').classList.remove('needs-shuffle');
+            document.getElementById('shuffle-deck').style.display = 'none';
+        }
+
         const placeholder = document.getElementById('placeholder');
         placeholder.innerHTML = null;
         
@@ -201,6 +209,11 @@
             img.src = `./assets/attacks/${resource}.png`;
             return img;
         }
+    }
+
+    function needsShuffle() {
+        const isShuffle = c => new Set(['double', 'miss']).has(c);
+        return cards.drawn.filter(isShuffle).length > 0;
     }
 
     function renderName(name) {

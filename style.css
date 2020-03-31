@@ -58,6 +58,20 @@ img {
   border-color: white;
 }
 
+#shuffle-deck {
+  color: red;
+  position: absolute;
+  left: 34%;
+  bottom: -25px;
+  font-family: Gloom;
+  font-size: 28px;
+}
+
+#draw.needs-shuffle,
+#draw.needs-shuffle:hover {
+  border-color: red;
+}
+
 #placeholder {
   width: 240px;
 }
