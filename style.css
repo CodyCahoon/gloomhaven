@@ -79,6 +79,39 @@ img {
 
 #placeholder img {
   border: 4px solid transparent;
+  transition: all 150ms;
+}
+
+#placeholder img:hover {
+  opacity: 1 !important;
+}
+
+#placeholder img:nth-child(2) {
+  opacity: 0.9;
+}
+#placeholder img:nth-child(3) {
+  opacity: 0.8;
+}
+#placeholder img:nth-child(4) {
+  opacity: 0.7;
+}
+#placeholder img:nth-child(5) {
+  opacity: 0.6;
+}
+#placeholder img:nth-child(6) {
+  opacity: 0.5;
+}
+#placeholder img:nth-child(7) {
+  opacity: 0.4;
+}
+#placeholder img:nth-child(8) {
+  opacity: 0.3;
+}
+#placeholder img:nth-child(9) {
+  opacity: 0.3;
+}
+#placeholder img:nth-child(n + 9) {
+  opacity: 0.2;
 }
 
 section {
