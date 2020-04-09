@@ -175,15 +175,35 @@
     }
 
     function onAddBless() {
-        cards.available.push('bless');
+        addCard('bless');
     }
 
     function onAddCurse() {
-        cards.available.push('curse');
+        addCard('curse');
     }
 
     function onAddScenarioEffect() {
-        cards.available.push('-1scenario');
+        addCard('-1scenario');
+    }
+
+    function addCard(cardName) {
+        cards.available.push(cardName);
+
+        const card = createCard(cardName);
+        card.style.position = 'absolute';
+        card.style.top = '4px';
+        card.style.left = '3px';
+        card.classList.add('added-card');
+        
+        const drawingDeck = document.getElementById('drawing-deck');
+        if (!drawingDeck) {
+            return;
+        }
+        drawingDeck.appendChild(card);
+
+        setTimeout(() => {
+            card.remove();
+        }, 1000)
     }
 
     function renderCards() {
@@ -205,13 +225,6 @@
         
         const cardsToRender = cards.drawn.length === 0 ? ['blank'] : cards.drawn;
         cardsToRender.map(createCard).forEach(img => placeholder.appendChild(img));
-
-        function createCard(name) {
-            const img = document.createElement('img');
-            const resource = cardToResource.get(name);
-            img.src = `./assets/attacks/${resource}.png`;
-            return img;
-        }
     }
 
     function needsShuffle() {
@@ -223,4 +236,10 @@
         document.getElementById('name').innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
 
+    function createCard(name) {
+        const img = document.createElement('img');
+        const resource = cardToResource.get(name);
+        img.src = `./assets/attacks/${resource}.png`;
+        return img;
+    }
 })();

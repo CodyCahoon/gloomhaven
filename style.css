@@ -37,6 +37,7 @@ img {
 
 #drawing-deck {
   position: relative;
+  z-index: 1;
 }
 
 #total-cards {
@@ -104,46 +105,18 @@ button:hover {
   border-color: white;
 }
 
-/* Customize the label (the container) */
-.container {
-  display: block;
-  position: relative;
-  padding: 4px 8px;
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-  color: white;
-  font-family: Gloom;
-  display: inline-block;
-  font-size: 20px;
-  text-align: center;
-  margin: 4px;
+.added-card {
+  z-index: -1;
+  animation: slide-in 1.5s;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
 
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border: 3px solid white;
-}
-
-.container:hover input ~ .checkmark,
-.container input:checked ~ .checkmark {
-  border-color: #2196f3;
-}
-
-.container input:checked {
-  color: #2196f3;
+  to {
+    transform: translateX(0%);
+    display: none;
+  }
 }
