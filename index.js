@@ -50,6 +50,8 @@
         ['poison', 'Poison'],
         ['+0stun', 'Damage--Plus--0--Stun'],
         ['-1scenario', 'Damage--Minus--1'],
+        ['+1roll', 'Damage--Plus--1--Roll'],
+        ['+1curse', 'Damage--Plus--1--Curse'],
     ]);
 
     init();
@@ -104,6 +106,7 @@
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, '+1curse');
 
             // Elements
             addToDeck(deck, 'earth');
@@ -116,7 +119,7 @@
             const deck = cardsByCharacter[characters.Summoner];
             addToDeck(deck, '+1', 10);
             addToDeck(deck, '+0', 7);
-            addToDeck(deck, '+2');
+            addToDeck(deck, '+2', 2);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'poison');
@@ -125,24 +128,24 @@
         function setupSunkeeper() {
             const deck = cardsByCharacter[characters.Sunkeeper];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 4);
             addToDeck(deck, '-1');
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, '+1roll', 4);
         }
 
         function setupQuartermaster() {
             const deck = cardsByCharacter[characters.Quartermaster];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 2);
             addToDeck(deck, '-1');
             addToDeck(deck, '-2');
-            addToDeck(deck, '+2');
+            addToDeck(deck, '+2', 3);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'pierce3', 2);
             addToDeck(deck, 'refresh');
+            addToDeck(deck, '+1roll', 2);
         }
     }
 
