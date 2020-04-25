@@ -119,7 +119,7 @@
             const deck = cardsByCharacter[characters.Summoner];
             addToDeck(deck, '+1', 10);
             addToDeck(deck, '+0', 7);
-            addToDeck(deck, '+2', 2);
+            addToDeck(deck, '+2', 3);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'poison');
