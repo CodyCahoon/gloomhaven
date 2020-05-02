@@ -41,6 +41,7 @@
         ['+2fire', 'Damage--Plus--2--Fire'],
         ['+2ice', 'Damage--Plus--2--Ice'],
         ['earth', 'Element--Earth'],
+        ['fire', 'Element--Fire'],
         ['wind', 'Element--Wind'],
         ['darkness', 'Element--Darkness'],
         ['light', 'Element--Light'],
@@ -52,7 +53,8 @@
         ['-1scenario', 'Damage--Minus--1'],
         ['+1roll', 'Damage--Plus--1--Roll'],
         ['+1curse', 'Damage--Plus--1--Curse'],
-	['stun--roll', 'Stun--Roll'],
+	    ['stun--roll', 'Stun--Roll'],
+	    ['target--roll', 'Target--Roll'],
     ]);
 
     init();
@@ -124,6 +126,8 @@
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'poison');
+            addToDeck(deck, 'fire');
+            addToDeck(deck, 'wind');
         }
 
         function setupSunkeeper() {
@@ -147,7 +151,8 @@
             addToDeck(deck, 'pierce3', 2);
             addToDeck(deck, 'refresh');
             addToDeck(deck, '+1roll', 2);
-	    addToDeck(deck, 'stun--roll');
+            addToDeck(deck, 'stun--roll');
+            addToDeck(deck, 'target--roll');
         }
     }
 
